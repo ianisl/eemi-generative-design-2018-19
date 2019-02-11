@@ -2,13 +2,13 @@ let bgColor;
 let rowCount;
 let columnCount;
 let seed;
-let image;
+let webImage;
 let fillPerc;
 let gridColors;
 
 function preload() {
-    // Image source: https://unsplash.com/photos/RnCPiXixooY by Efe Kurnaz
-    image = loadImage('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e3917e828b7c2502b0041813eff1294&auto=format&fit=crop&w=634&q=80');
+    // webImage source: https://unsplash.com/photos/RnCPiXixooY by Efe Kurnaz
+    webImage = loadImage('https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e3917e828b7c2502b0041813eff1294&auto=format&fit=crop&w=634&q=80');
 }
 
 function setup() {
@@ -50,9 +50,9 @@ function initRandom() {
     gridColors = [];
     for (let i = 0; i < columnCount; i++) {
         for (let j = 0; j < rowCount; j++) {
-            let cX = random(image.width);
-            let cY = random(image.height);
-            gridColors.push(image.get(cX, cY));
+            let cX = random(webImage.width);
+            let cY = random(webImage.height);
+            gridColors.push(webImage.get(cX, cY));
         }
     }
 }
